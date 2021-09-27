@@ -28,4 +28,33 @@ ll n,e;
     q.push(*it);
    }
   }
-------------------------------------
+-----------DFS--------------
+vi vis;
+vvi adj;
+void dfs(ll i);
+int main()
+{
+  ll b;
+  i1(b);
+  adj=vvi(100);
+  lop(b)
+  {
+   ll u,v;
+   i2(u,v);
+   adj[u].pb(v);
+  }
+  vis=vi(100,0);
+  dfs(adj[0][0]);
+  return 0;
+}
+void dfs(ll i)
+{
+  vis[i]=1;
+  cout<<i<<" ";
+  for(auto j:adj[i])
+  {
+   if(!vis[j])  
+   dfs(j);
+  }
+}
+------------------------
