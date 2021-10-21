@@ -70,3 +70,25 @@ int main()
   o0(a[i]);
 }
 ------------quicksort---------------
+void countsort(int arr[],int n)
+{
+  int max=*max_element(arr,arr+n);
+  int freq[max+1],i=0,narr[n];
+  memset(freq, 0, sizeof(freq));
+  memset(narr, 0, sizeof(narr)); 
+  for(i=0;i<n;i++)
+  {
+    freq[arr[i]]++;
+  }
+  for(i=1;i<=max;i++)
+  {
+    freq[i]+=freq[i-1];
+  }
+  for(i=0;i<n;i++)
+  {
+   narr[--freq[arr[i]]]=arr[i];
+  }
+  for(i=0;i<n;i++)
+  arr[i]=narr[i];
+}
+-------------countsort----------------
