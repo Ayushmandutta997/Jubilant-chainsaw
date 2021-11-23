@@ -1,0 +1,34 @@
+Find subarrays in array
+In general, for an array/string of size n, there are n*(n+1)/2 non-empty subarrays/substrings
+void subArray(int arr[], int n)
+{
+    for (int i=0; i <n; i++)
+    {
+        for (int j=i; j<n; j++)
+        {
+            for (int k=i; k<=j; k++)
+                cout << arr[k] << " ";
+ 
+            cout << endl;
+        }
+    }
+}
+Find subsequences in array
+void printSubsequences(int arr[], int n)
+{
+    /* Number of subsequences is (2**n -1)*/
+    unsigned int opsize = pow(2, n);
+ 
+    /* Run from counter 000..1 to 111..1*/
+    for (int counter = 1; counter < opsize; counter++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            /* Check if jth bit in the counter is set
+                If set then print jth element from arr[] */
+            if (counter & (1<<j))
+                cout << arr[j] << " ";
+        }
+        cout << endl;
+    }
+}
