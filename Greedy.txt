@@ -160,3 +160,37 @@ int main()
  }
  return 0;
 } 
+
+Job sequencing problem with deadline
+
+int main()
+{
+  int nj,mb=INT_MIN;
+  vector<pair<int,int>>v;
+  i1(nj);
+  lop(nj)
+  {
+   ei(a);
+   ei(b);
+   mb=max(mb,b);
+   v.pb({a,b});
+  }
+  sort(v.begin(),v.end(),greater<pair<int,int>>());
+  vector<int>vb(mb,0);
+  for(auto i:v)
+  {
+    for(int j=i.second-1;j>=0;j--)
+    {
+      if(vb[j]==0)
+      {
+        vb[j]=i.first;
+        break;
+      } 
+    }
+    if(find(vb.begin(),vb.end(),0)==vb.end())
+    break;
+  }
+  int sum=accumulate(vb.begin(),vb.end(),0);
+  cout<<sum;
+  return 0;
+}
