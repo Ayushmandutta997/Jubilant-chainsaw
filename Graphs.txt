@@ -58,3 +58,48 @@ void dfs(ll i)
   }
 }
 ------------------------
+Connected Components for t test cases
+
+void connected(int i,vi &v)
+{
+ v[i]=1; 
+ for(auto x:adj[i])
+ {
+  if(v[x]!=1)
+  {
+   connected(x,v);
+  }
+ }
+ return;
+}
+int main()
+{
+  flash;
+  int t=0;
+  cin>>t;
+  while(t--)
+  {
+    int n,m,c=0;
+    cin>>n>>m;
+    adj=vvi(n+1);
+    lop(m)
+    {
+     ei(x);
+     ei(y); 
+     adj[x].pb(y);
+     adj[y].pb(x);
+    } 
+    vi a(n+1,0);
+    loop(1,n)
+    {
+     if(a[i]==0)
+     {
+     connected(i,a);
+     c++;
+     }
+    }
+    o1(c);
+  }
+  return 0;
+}
+-----------------------------------------

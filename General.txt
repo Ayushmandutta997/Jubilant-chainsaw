@@ -157,4 +157,11 @@ unordered map
 map (like set) is an ordered sequence of unique keys whereas in unordered_map key can be stored in any order, 
 so unordered. The map is implemented as a balanced tree structure that is why it is possible to maintain order 
 between the elements (by specific tree traversal). The time complexity of map operations is O(log n) while for 
-unordered_map, it is O(1) on average. 
+unordered_map, it is O(1) on average.
+set,multimap,Unordered_set,Unordered_multiset,Unordered_multimap are similar 
+---------------
+priority queue - Priority queues are a type of container adapters, specifically designed such that the first
+element of the queue is the greatest of all elements in the queue and elements are in nonincreasing order
+priority_queue<int> gq - maxheap
+priority_queue<int, vector<int>, greater<int> > gq - meanheap
+
