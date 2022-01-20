@@ -185,3 +185,27 @@ another array b.
 partial_sum(first, last, b);
 partial_sum(first, last, b, myfun);
 
+The stoi() function converts a string data to an integer type by passing the string as a parameter to return an 
+integer value.
+
+Erases at most, len characters of *this, starting at index idx. 
+string& string ::erase (size_type idx, size_type len )
+- If len is missing, all remaining characters are removed.
+- Throw out_of_range if idx > size().
+
+Erase the single character at iterator position pos. 
+string& string ::erase (iterator pos)
+- Return the first character after the last character removed
+- If no such character is remaining then, returns 
+  string::end() i.e. position after the last character.
+
+Erases all characters after position ‘pos’ 
+string& string ::erase (size_type pos)
+- Throw out_of_range if idx > size().
+
+str.insert(6,str2);                 // to be (the )question
+
+std::cout << "max_size: " << str.max_size() << "\n"; The maximum length the string can reach.
+
+comparator function
+sort(a.begin(),a.begin()+z,[&](pair<pair<ll,ll>,ll>&x,pair<pair<ll,ll>,ll>&y){return x.first.first<y.first.first;});
