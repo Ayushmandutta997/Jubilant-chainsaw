@@ -212,3 +212,16 @@ sort(a.begin(),a.begin()+z,[&](pair<pair<ll,ll>,ll>&x,pair<pair<ll,ll>,ll>&y){re
 
 For calculating Areas use Unsigned long long
 
+reversing a string-reverse(str.begin(), str.end()),string rev = string(str.rbegin(),str.rend());
+
+Find first occurrence of "geeks"
+size_t found = str.find(str1);
+if (found != string::npos)
+cout << "First occurrence is " << found << endl;
+
+--------------
+There is a function with syntax nth_element (RandomAccessIterator first, RandomAccessIterator nth, RandomAccessIterator last);
+The function of this is that it rearranges the array in such a way such that the element at the nth position 
+is the one which should be at that position if we sort the list from the first to last iterator. 
+It uses the quick select method for this.Time complexity of nth_element is O(n) fuction unlike sort.
+
