@@ -224,4 +224,39 @@ There is a function with syntax nth_element (RandomAccessIterator first, RandomA
 The function of this is that it rearranges the array in such a way such that the element at the nth position 
 is the one which should be at that position if we sort the list from the first to last iterator. 
 It uses the quick select method for this.Time complexity of nth_element is O(n) fuction unlike sort.
+--------------
+Special ways to initialize a vector
+vector<int> vect{ 10, 20, 30 };
+---
+vector<int> vect1{ 10, 20, 30 };
+vector<int> vect2(vect1.begin(), vect1.end());
+---
+int arr[5];
+iota(arr, arr + 5, 1);
+for (int i = 0; i < 5; i++) {
+cout << arr[i] << " ";
+}
+o/p-1,2,3,4,5
+---
+What if we wish to initialize the first 4 values to say 100 and rest 6 values as 200 ?
+One way to do this is to manually provide a value to each position in the vector. 
+The other methods as provided in STL, the Standard Template Library, are fill and fill_n.  
 
+fill() The ‘fill’ function assigns the value ‘val’ to all the elements in the range [begin, end),
+where ‘begin’ is the initial position and ‘end’ is the last position.
+vector<int> vect(8);
+// calling fill to initialize values in the
+// range to 4
+fill(vect.begin() + 2, vect.end() - 1, 4);
+
+o/p-0 0 4 4 4 4 4 0
+fill_n() In fill_n(), we specify beginning position, number of elements to be filled and values to be filled. 
+fill_n(vect.begin(), 4, 7);
+for (int i=0; i<vect.size(); i++)
+cout << ' ' << vect[i];
+cout << '\n';
+// calling fill to initialize 3 elements from
+// "begin()+3" with value 4
+fill_n(vect.begin() + 3, 3, 4);
+7 7 7 7 0 0 0 0
+7 7 7 4 4 4 0 0
