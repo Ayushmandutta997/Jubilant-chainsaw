@@ -260,3 +260,6 @@ cout << '\n';
 fill_n(vect.begin() + 3, 3, 4);
 7 7 7 7 0 0 0 0
 7 7 7 4 4 4 0 0
+//Count function
+n=count(vect.begin(), vect.end(), 3);
+n=count(str.begin(), str.end(), 'e');
