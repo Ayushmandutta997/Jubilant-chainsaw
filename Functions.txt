@@ -263,3 +263,93 @@ fill_n(vect.begin() + 3, 3, 4);
 //Count function
 n=count(vect.begin(), vect.end(), 3);
 n=count(str.begin(), str.end(), 'e');
+-----------------------
+bitwise ^,&,~,|(o(n)) are faster then other operations like %(o(n^3)),(*,/(o(n^2)))
+------------
+Find Factors of all numbers till 10^5
+
+const ll MAXM = 1e5;
+vector<ll> factors[MAXM + 5];
+void init()
+{
+    for (ll i = 1; i <= MAXM; i++)
+    {
+        for (ll j = i; j <= MAXM; j += i)
+        {
+            factors[j].pb(i);
+        }
+    }
+}
+--------------------------
+Binary Exponentiation
+While calculating (n^k), binary exponentiation relies on whether n is even or odd.
+
+If k is even (nk) can be written as  (n2)k/2. As we can see that computation steps were reduced from k to k/2 in just one step.
+
+If k is odd (nk) can be written as n.(n)k-1, so now  (k-1) is even.
+
+Approach:
+Maintain a variable ans to store the final answer.
+If k is even,square n and divide k by 2.as nk can be written as (n2)k/2  i.e (n*n)k/2.
+If k is odd,multiply ans with n and reduce k by 1,as nk can be written as n*(n)k-1.
+Print the ans.
+--------------------------
+Iterator lower_bound (Iterator first, Iterator last, const val)  
+lower_bound returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘val’  and if the value is not present in the vector then it returns the end iterator.
+
+Iterator upper_bound (Iterator first, Iterator last, const val)
+upper_bound returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘val’  and if the value is not present in the vector then it returns the end iterator.
+
+Time Complexity: O(n*log(n)) where n is the number of elements in the array.
+Auxiliary Space: O(1)
+
+lower = lower_bound(v.begin(), v.end(), 6);
+upper = upper_bound(v.begin(), v.end(), 6);
+cout << "lower_bound for 6 at index "
+<< (lower - v.begin()) << '\n';
+cout << "upper_bound for 6 at index "
+<< (upper - v.begin()) << '\n';
+---------------------------
+Prefix Sum Array – Implementation and Applications in Competitive Programming
+Given an array arr[] of size N, find the prefix sum of the array. A prefix sum array is another array prefixSum[] of the same size, such that the value of prefixSum[i] is arr[0] + arr[1] + arr[2] . . . arr[i].
+void fillPrefixSum(int arr[], int n, int prefixSum[])
+{
+    prefixSum[0] = arr[0];
+    // Adding present element with previous element
+    for (int i = 1; i < n; i++)
+        prefixSum[i] = prefixSum[i - 1] + arr[i];
+}
+---------------------------
+Two pointers is really an easy and effective technique that is typically used for searching pairs in a sorted array.
+Given a sorted array A (sorted in ascending order), having N integers, find if there exists any pair of elements (A[i], A[j]) such that their sum is equal to X.
+
+Now let’s see how the two-pointer technique works. We take two pointers, one representing the first element and other representing the last element of the array, and then we add the values kept at both the pointers. If their sum is smaller than X then we shift the left pointer to right or if their sum is greater than X then we shift the right pointer to left, in order to get closer to the sum. We keep moving the pointers until we get the sum as X. 
+
+int isPairSum(int A[], int N, int X)
+{
+    // represents first pointer
+    int i = 0;
+  
+    // represents second pointer
+    int j = N - 1;
+  
+    while (i < j) {
+  
+        // If we find a pair
+        if (A[i] + A[j] == X)
+            return 1;
+  
+        // If sum of elements at current
+        // pointers is less, we move towards
+        // higher values by doing i++
+        else if (A[i] + A[j] < X)
+            i++;
+  
+        // If sum of elements at current
+        // pointers is more, we move towards
+        // lower values by doing j--
+        else
+            j--;
+    }
+    return 0;
+}
