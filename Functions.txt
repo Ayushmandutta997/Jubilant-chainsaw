@@ -158,7 +158,9 @@ map (like set) is an ordered sequence of unique keys whereas in unordered_map ke
 so unordered. The map is implemented as a balanced tree structure that is why it is possible to maintain order 
 between the elements (by specific tree traversal). The time complexity of map operations is O(log n) while for 
 unordered_map, it is O(1) on average.
-set,multimap,Unordered_set,Unordered_multiset,Unordered_multimap are similar 
+set,multimap,Unordered_set,Unordered_multiset,Unordered_multimap are similar.
+
+In the worst case, its time complexity can go from O(1) to O(n), especially for big prime numbers. In this situation, it is highly advisable to use a map instead to avoid getting a TLE(Time Limit Exceeded) error.
 ---------------
 priority queue - Priority queues are a type of container adapters, specifically designed such that the first
 element of the queue is the greatest of all elements in the queue and elements are in nonincreasing order
@@ -353,3 +355,6 @@ int isPairSum(int A[], int N, int X)
     }
     return 0;
 }
+------------------------------------------------
+Stable_sort - Similar to sort() but preserves semantic (initial) order in case of equivalent values which is not guaranteed in sort
+Iota - initializes all values of array or vector according to given start value in consecutive order from pointer first to last 
